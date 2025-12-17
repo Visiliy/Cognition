@@ -1,0 +1,124 @@
+.search-bar {
+    background-color: #353434;
+    padding: 10px;
+    width: 60%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        width: 90%;
+    }
+}
+
+.search-input-area {
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+    transition: height 0.05s ease-in-out;
+    max-height: 25vh; 
+}
+
+.search-bar-textarea {
+    border: none;
+    outline: none;
+    letter-spacing: -0.8px;
+    flex-grow: 1;
+    margin-right: 10px;
+    background-color: #353434;
+    color: white;
+    box-sizing: border-box;
+    min-height: 24px; 
+    max-height: 25vh;
+    overflow-y: auto;
+    resize: none;
+    transition: height 0.05s ease-in-out;
+}
+
+.search-button {
+    color: white;
+    background-color: #353434;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-45deg);
+    transition: background-color 0.3s ease;
+}
+
+.search-control-panel {
+    display: flex;
+    gap: 10px;
+}
+
+.search-options,
+.search-options-rules {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search-bar-textarea::placeholder {
+    color: white;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+
+.search-bar-textarea::-webkit-scrollbar{
+    display: none;
+}
+
+.open-options-block {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 110%;
+}
+
+.open-options-window {
+    background-color: #353434;
+    border-radius: 20px;
+    user-select: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.li-options {
+    color: white;
+}
+
+.option {
+    display: inline-block;
+    width: auto;
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    text-align: left;
+}
+  
+.option:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #353434;
+}

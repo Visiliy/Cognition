@@ -1,0 +1,114 @@
+.pro-page {
+  background-image: url('../assets/about.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  user-select: none;
+}
+
+.pro-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.app-title {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.auth-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 1px solid white;
+  padding: 8px 20px;
+  border-radius: 18px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.pro-search-bar-container {
+  position: relative;
+  width: 70%;
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+.pro-search-input-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center; /* Changed from flex-start to center */
+  justify-content: center;
+}
+
+.pro-search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  width: 100%;
+  outline: none;
+  text-align: left; /* Changed to left */
+  resize: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  transition: height 0.2s ease-out;
+  /* Removed flex properties */
+}
+
+.pro-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center; /* Explicitly centered */
+}
+
+.pro-search-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8em;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform: rotate(-45deg);
+}
+
+.pro-search-button:hover {
+  color: lightgray;
+}
