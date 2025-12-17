@@ -13,6 +13,7 @@ function SearchPage() {
   const [openOptions, setOpenOptions] = useState(false);
   const navigate = useNavigate();
   const { currentUser, login, handleUserButtonClick } = useAuth();
+  const [uploadedFiles, setUploadedFiles] = useState([]);
 
     const openOptionsFunction = () => {
         setOpenOptions(!openOptions);
@@ -29,6 +30,15 @@ function SearchPage() {
   const handleLoginSuccess = (userName, token) => {
     login(userName, token);
     setShowAuthModal(false);
+  };
+
+  const handleFileUpload = (e) => {
+    const files = Array.from(e.target.files);
+    if (uploadedFiles.length + files.length > 5) {
+      alert('Можно загрузить не больше 5 файлов!');
+      return;
+    }
+    setUploadedFiles([...uploadedFiles, ...files]);
   };
 
   useEffect(() => {
@@ -72,7 +82,23 @@ function SearchPage() {
                         className='open-options-block-in-serach'
                     >
                         <div className='open-options-window'>
-                            <li className='li-options'><div className='option'>Upload a file</div></li>
+                          <li className='li-options'>
+                            <div className='option'>
+                              Upload a file
+                              {/* Скрытая кнопка выбора файлов */}
+                              <input
+                                type="file"
+                                id="fileInput"
+                                multiple
+                                style={{ display: 'none' }}
+                                onChange={handleFileUpload}
+                              />
+                              {/* Видимая "кнопка" — клик по ней = клик по скрытому input */}
+                              <label htmlFor="fileInput" style={{ marginLeft: '8px', cursor: 'pointer' }}>
+                                📎
+                              </label>
+                            </div>
+                          </li>
                             <li className='li-options'><div className='option'>Deep thinking</div></li>
                             <li className='li-options'><div className='option'>Multi-agent mode</div></li>
                         </div>
